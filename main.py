@@ -19,16 +19,15 @@ with open('data.csv', newline = '') as f:
 
 data.pop(0)
 
+wealthy = len(data)
 
-totalEntries = len(data)
-
-reminder = 0
+highschool_completed = 0
 
 for i in data:
     if int(i[3]) == 1:
-        reminder += 1
+        high_school += 1
 
-fig = pg.Figure(pg.Bar(x = ['reminded', 'not reminded'], y = [reminder, totalEntries - reminder]))
+fig = pg.Figure(pg.Bar(x = ['highschool_completed', 'wealthy'], y = [highschool_completed, wealthy - reminder]))
 
 fig.show()
 
@@ -48,24 +47,24 @@ mode = statistics.mode(allSavings)
 print(mode)
 
 
-notReminded = []
-reminded = []
+highschool_completed = []
+wealthy = []
 
 for b in data:
     if int(b[3]) == 1:
-        reminded.append(float(b[0]))
+        highschool_completed.append(float(b[0]))
     else:
-        notReminded.append(float(b[0]))
+        wealthy.append(float(b[0]))
 
-print("Reminded Peoples Data")
-print("Mean", statistics.mean(reminded))
-print("Median", statistics.median(reminded))
-print("Mode", statistics.mode(reminded))
+print("highschool completed")
+print("Mean", statistics.mean(highschool_completed))
+print("Median", statistics.median(highschool_completed))
+print("Mode", statistics.mode(rhighschool_completed))
 
-print("Not Reminded Peoples Data")
-print("Mean", statistics.mean(notReminded))
-print("Median", statistics.median(notReminded))
-print("Mode", statistics.mode(notReminded))
+print("wealthy")
+print("Mean", statistics.mean(wealthy))
+print("Median", statistics.median(wealthy))
+print("Mode", statistics.mode(wealthy))
 
 
 
